@@ -1,8 +1,10 @@
 # matsum
 
+<img src="https://img.shields.io/badge/go-v1.12-blue.svg"/>
+
 This is a package for adding elements after numerical calculation.
 
-## Example
+## Usage
 
 ```go
 package main
@@ -26,6 +28,31 @@ func main() {
     // result: 4
 
     // ...
+}
+```
+
+## Example (Softmax)
+
+impliments Softmax function.
+https://en.wikipedia.org/wiki/Softmax_function
+
+```math
+f(x) = \frac{e^{x_i}}{e^{x_1}+e^{x_2}+...+e^{x_n}}
+```
+
+```go
+func Softmax(x mat.Matrix) mat.Matrix {
+    // use matsum !!
+    f := math.Exp
+    expsum := matsum.Sum(x, f)
+
+	softmax := func(i, j int, v float64) float64 {
+		return math.Exp(v) / expsum
+    }
+
+	var result mat.Dense
+	result.Apply(softmax, x)
+	return &result
 }
 ```
 
