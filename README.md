@@ -45,13 +45,13 @@ func Softmax(x mat.Matrix) mat.Matrix {
     f := math.Exp
     expsum := matsum.Sum(x, f)
 
-	softmax := func(i, j int, v float64) float64 {
-		return math.Exp(v) / expsum
+    softmax := func(i, j int, v float64) float64 {
+        return math.Exp(v) / expsum
     }
 
-	var result mat.Dense
-	result.Apply(softmax, x)
-	return &result
+    var result mat.Dense
+    result.Apply(softmax, x)
+    return &result
 }
 ```
 
