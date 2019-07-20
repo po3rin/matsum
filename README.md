@@ -34,11 +34,10 @@ func main() {
 ## Example (Softmax)
 
 impliments Softmax function.
+
 https://en.wikipedia.org/wiki/Softmax_function
 
-```math
-f(x) = \frac{e^{x_i}}{e^{x_1}+e^{x_2}+...+e^{x_n}}
-```
+<img src="static/softmax.png">
 
 ```go
 func Softmax(x mat.Matrix) mat.Matrix {
