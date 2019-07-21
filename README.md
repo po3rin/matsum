@@ -13,7 +13,7 @@ import (
     "math"
 
     "github.com/po3rin/matsum"
-	"gonum.org/v1/gonum/mat"
+    "gonum.org/v1/gonum/mat"
 )
 
 func main() {
